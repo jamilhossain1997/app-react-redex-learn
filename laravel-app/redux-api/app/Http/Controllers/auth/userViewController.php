@@ -9,20 +9,20 @@ use App\Models\User;
 
 class userViewController extends Controller
 {
-    public function UserView(){
-            $user=User::all();
-            if($user !==''){
-                return response()->json([
-                    "status"=>200,
-                    "user"=>$user
-                ]);
-            }else{
-                return response()->json([
-                    "status"=>200,
-                     "messages"=>'Not Data Fundy'
-                ]);
-            }
-        
-        
+    public function UserView(Request $request)
+    {
+        $user = Auth::guard('api')->user();
+
+        if ($user) {
+            return response()->json([
+                "status" => 200,
+                "user" => $user
+            ]);
+        } else {
+            return response()->json([
+                "status" => 401,
+                "message" => 'Please log in'
+            ]);
+        }
     }
 }
