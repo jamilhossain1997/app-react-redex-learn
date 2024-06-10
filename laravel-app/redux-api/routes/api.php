@@ -31,6 +31,13 @@ Route::prefix('user')->middleware('auth:api')->group(function () {
 });
 
 
+//product 
+
+Route::prefix('product')->middleware('auth:api')->group(function(){
+
+});
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
