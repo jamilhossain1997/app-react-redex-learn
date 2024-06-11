@@ -38,6 +38,7 @@ Route::prefix('user')->middleware('auth:api')->group(function () {
 Route::prefix('product')->middleware('auth:api')->group(function(){
     Route::post('ProductAdd' ,'App\Http\Controllers\product\proAddController@ProductAdd');
     Route::get('ProductView' ,'App\Http\Controllers\product\proViewController@ProductView');
+    Route::delete('ProductDelect/{id}','App\Http\Controllers\product\proDelectController@ProductDelect');
 });
 
 
