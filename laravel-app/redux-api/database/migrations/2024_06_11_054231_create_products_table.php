@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('product_name');
             $table->decimal('product_price', 8, 2);  // Changed to decimal for better precision
-            $table->integer('quantity')->unsigned()->default(0);
+            $table->integer('quantity'); // Allow null values
             $table->text('description')->nullable();
             $table->integer('minimum_order_qty')->default(1);  // Removed 'after' clause
             $table->boolean('active')->default(true);
