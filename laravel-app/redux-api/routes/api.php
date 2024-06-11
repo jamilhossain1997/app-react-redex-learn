@@ -30,15 +30,14 @@ Route::prefix('user')->middleware('auth:api')->group(function () {
     Route::delete('UserDelect/{id}', 'App\Http\Controllers\Auth\userEditcontroller@UserDelect');
 });
 
-Route::prefix('product')->middleware('auth:api')->group(function(){
-    Route::post('ProductAdd' ,'App\Http\Controllers\product\proAddController@ProductAdd');
-});
+
 
 
 //product 
 
 Route::prefix('product')->middleware('auth:api')->group(function(){
-
+    Route::post('ProductAdd' ,'App\Http\Controllers\product\proAddController@ProductAdd');
+    Route::get('ProductView' ,'App\Http\Controllers\product\proViewController@ProductView');
 });
 
 
