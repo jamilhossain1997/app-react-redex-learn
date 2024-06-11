@@ -28,7 +28,7 @@ class ProAddController extends Controller
         $product = Product::create([
             'product_name' => $request->input('product_name'),
             'product_price' => $request->input('product_price'),
-            'quantity' => $request->input('quantity'),
+            'quantity' => $request->input('quantity', 0), 
             'description' => $request->input('description'),
         ]);
 
