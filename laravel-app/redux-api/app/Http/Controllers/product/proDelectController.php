@@ -13,8 +13,7 @@ class proDelectController extends Controller
         if (!$product) {
             return response()->json(['message' => 'Product not found'], 404);
         }
-    
-        // Delete the product
+
         $product->delete();
     
         return response()->json(['message' => 'Product deleted successfully']);
